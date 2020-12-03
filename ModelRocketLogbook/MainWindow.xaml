@@ -1,0 +1,68 @@
+﻿<Window x:Class="ModelRocketLogbook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:v="clr-namespace:ModelRocketLogbook.View"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="This"/>
+            <MenuItem Header="Is"/>
+            <MenuItem Header="The"/>
+            <MenuItem Header="Menu"/>
+        </Menu>
+
+        <TabControl Grid.Row="1" TabStripPlacement="Left" SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Margin="0 5 0 0">
+                        <fa:ImageAwesome Icon="Rocket" MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Foreground="{StaticResource IconBrush}"/>
+                        <Label Content="Rockets"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <v:RocketsView DataContext="{Binding RocketsViewModel}"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Margin="0 5 0 0">
+                        <fa:ImageAwesome Icon="ExclamationTriangle" MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Foreground="{StaticResource IconBrush}"/>
+                        <Label Content="Motors"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <v:MotorsView DataContext="{Binding MotorsViewModel}"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Margin="0 5 0 0">
+                        <fa:ImageAwesome Icon="Binoculars" MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Foreground="{StaticResource IconBrush}"/>
+                        <Label Content="Flights"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <v:FlightsView DataContext="{Binding FlightsViewModel}"/>
+                </TabItem.Content>
+            </TabItem>
+            
+        </TabControl>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="This"/>
+            <StatusBarItem Content="Is"/>
+            <StatusBarItem Content="The"/>
+            <StatusBarItem Content="Status Bar"/>
+        </StatusBar>
+    </Grid>
+</Window>

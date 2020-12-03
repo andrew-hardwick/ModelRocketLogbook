@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ModelRocketLogbook.View.FlightListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d">
+    <Border BorderBrush="Black" BorderThickness="1" Background="#fff" Padding="{StaticResource StandardPadding}" Margin="3" CornerRadius="{StaticResource CornerRadius}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <fa:ImageAwesome Grid.Column="0" Margin="{StaticResource StandardPadding}" MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Icon="CheckCircle" Foreground="{StaticResource IconYesBrush}" Visibility="{Binding Nominal, Converter={StaticResource Bool2Vis}}" />
+            <fa:ImageAwesome Grid.Column="0" Margin="{StaticResource StandardPadding}"  MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Icon="ExclamationTriangle" Foreground="{StaticResource IconMaybeBrush}" Visibility="{Binding Mishap, Converter={StaticResource Bool2Vis}}" />
+            <fa:ImageAwesome Grid.Column="0" Margin="{StaticResource StandardPadding}"  MaxWidth="{StaticResource MaxIconDimension}" MaxHeight="{StaticResource MaxIconDimension}" Icon="TimesCircle" Foreground="{StaticResource IconNoBrush}" Visibility="{Binding Catastrophe, Converter={StaticResource Bool2Vis}}" />
+
+            <StackPanel Grid.Column="1" Margin="{StaticResource StandardPadding}" Orientation="Vertical">
+                <Label Grid.Column="1" Padding="{StaticResource StandardPaddingNoBottom}" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding DateOfFlight}" />
+                <Label Grid.Column="1" Padding="{StaticResource StandardPaddingNoTop}" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding RocketName}" />
+            </StackPanel>
+
+            <Border Grid.Column="2" Margin="{StaticResource StandardPadding}" Padding="{StaticResource StandardPadding}" Background="{StaticResource IconBrush}" CornerRadius="{StaticResource CornerRadius}">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Foreground="White" Content="{Binding MotorName}" />
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<Application x:Class="ModelRocketLogbook.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ModelRocketLogbook.ViewModel"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <vm:Locator x:Key="Locator"/>
+        <BooleanToVisibilityConverter x:Key="Bool2Vis"/>
+        <sys:Double x:Key="MaxIconDimension">25</sys:Double>
+        <Color x:Key="IconColor">#8a8a99</Color>
+        <SolidColorBrush x:Key="IconBrush" Color="{StaticResource IconColor}"/>
+        <Color x:Key="IconYesColor">#86b300</Color>
+        <SolidColorBrush x:Key="IconYesBrush" Color="{StaticResource IconYesColor}"/>
+        <Color x:Key="IconMaybeColor">#e6ad00</Color>
+        <SolidColorBrush x:Key="IconMaybeBrush" Color="{StaticResource IconMaybeColor}"/>
+        <Color x:Key="IconNoColor">#e63a00</Color>
+        <SolidColorBrush x:Key="IconNoBrush" Color="{StaticResource IconNoColor}"/>
+        <Color x:Key="BackgroundColor">#4c4c57</Color>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+        <CornerRadius x:Key="CornerRadius">4</CornerRadius>
+        <Thickness x:Key="StandardPadding">5</Thickness>
+        <Thickness x:Key="StandardPaddingNoTop">5 0 5 5</Thickness>
+        <Thickness x:Key="StandardPaddingNoBottom">5 5 5 0</Thickness>
+    </Application.Resources>
+</Application>
