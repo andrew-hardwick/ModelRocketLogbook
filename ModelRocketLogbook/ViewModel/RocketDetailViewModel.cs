@@ -54,7 +54,6 @@ namespace ModelRocketLogbook.ViewModel
             _dataManager = dataManager;
 
             _dataManager.OnRocketChanged += HandleRocketChanged;
-            _dataManager.OnFlightChanged += HandleFlightChanged;
 
             _rocketId = rocketId;
 

@@ -57,7 +57,6 @@ namespace ModelRocketLogbook.ViewModel
         {
             _dataManager = datamanager;
 
-            _dataManager.OnFlightChanged += HandleFlightChanged;
             _dataManager.OnRocketChanged += HandleRocketChanged;
 
             _dataManager.OnMotorCollectionChanged += HandleMotorCollectionChanged;
@@ -94,14 +93,6 @@ namespace ModelRocketLogbook.ViewModel
         #endregion Commands
 
         #region Private Methods
-
-        private void HandleFlightChanged(Guid flightId)
-        {
-            if (_flightId.Equals(flightId))
-            {
-                SetValuesFromFlight();
-            }
-        }
 
         private void HandleRocketChanged(Guid rocketId)
         {

@@ -27,7 +27,6 @@ namespace ModelRocketLogbook.ViewModel
             _dataManager = dataManager;
 
             _dataManager.OnFlightCollectionChanged += HandleFlightCollectionChanged;
-            _dataManager.OnFlightChanged += HandleFlightChanged;
 
             rocketsViewModel.OnFlightSelected += HandleFlightSelected;
 
