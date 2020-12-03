@@ -90,6 +90,8 @@ namespace ModelRocketLogbook.ViewModel
             Name = _rocket.Name;
             _mount = _rocket.Mount;
 
+            SelectedMountIndex = _mountOptions.IndexOf(_mount.ToFormattedString());
+
             RaisePropertyChanged(() => Mount);
 
             Active = _rocket.Active;

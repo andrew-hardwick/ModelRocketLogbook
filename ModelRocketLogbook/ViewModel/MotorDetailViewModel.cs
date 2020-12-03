@@ -67,6 +67,8 @@ namespace ModelRocketLogbook.ViewModel
             AverageThrust = motor.AverageThrust;
             TotalImpulse = motor.TotalImpulse;
 
+            SelectedMountIndex = _mountOptions.IndexOf(_mount.ToFormattedString());
+
             DirtyState = false;
 
             RaiseNonsetPropertiesChanged();

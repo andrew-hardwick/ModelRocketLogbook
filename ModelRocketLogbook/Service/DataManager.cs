@@ -17,8 +17,6 @@ namespace ModelRocketLogbook.Service
 
         public event Action<Guid> OnMotorChanged;
 
-        public event Action<Guid> OnFlightChanged;
-
         public event Action OnRocketCollectionChanged;
 
         public event Action OnMotorCollectionChanged;
